@@ -36,12 +36,6 @@ body {
 .gift {
   font-size: 70px;
   margin-bottom: 20px;
-  animation: float 2s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
 }
 
 h1 {
@@ -99,24 +93,32 @@ button:hover {
 
   <div class="gift">🎁</div>
 
-  <h1>Open Your Surprise</h1>
+  <div id="cover">
+    <h1>Open Your Surprise</h1>
 
-  <div class="subtitle">
-    A LITTLE SOMETHING JUST FOR YOU
+    <div class="subtitle">
+      A VERY IMPORTANT MESSAGE AWAITS YOU
+    </div>
+
+    <button onclick="openSurprise()">
+      OPEN SURPRISE ✦
+    </button>
   </div>
-
-  <button onclick="openSurprise()">
-    OPEN
-  </button>
 
   <div id="surprise">
 
-    <div class="amount">
-      ✨ Surprise! ✨
+    <div class="subtitle">
+      A VERY IMPORTANT REQUEST
     </div>
 
+    <div class="amount">
+      ₹200
+    </div>
+
+    <h1>Give Burhan ₹200</h1>
+
     <div class="message">
-      You found it! Hope this little surprise made you smile. 💛
+      Presented with absolutely unnecessary luxury. 😌
     </div>
 
   </div>
@@ -125,8 +127,8 @@ button:hover {
 
 <script>
 function openSurprise() {
+  document.getElementById("cover").style.display = "none";
   document.getElementById("surprise").style.display = "block";
-  document.querySelector("button").style.display = "none";
 }
 </script>
 
