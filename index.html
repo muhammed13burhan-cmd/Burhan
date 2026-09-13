@@ -1,89 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎁 Open Your Surprise</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎁 Open Your Surprise</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(circle at top, #3b2b0b, #111 45%, #050505 80%);
-      color: #f5e6c8;
-      font-family: Georgia, "Times New Roman", serif;
-      text-align: center;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: radial-gradient(circle at top, #3b2b0b, #111 45%, #050505 80%);
+  color: #f5e6c8;
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+}
 
-    .card {
-      width: 90%;
-      max-width: 650px;
-      padding: 60px 30px;
-      border: 1px solid #c9a45c;
-      border-radius: 25px;
-      background: rgba(20, 17, 12, 0.95);
-      box-shadow:
-        0 30px 80px rgba(0,0,0,0.8),
-        inset 0 0 50px rgba(201,164,92,0.08);
-    }
+.card {
+  width: 90%;
+  max-width: 650px;
+  padding: 60px 30px;
+  border: 1px solid #c9a45c;
+  border-radius: 25px;
+  background: rgba(20, 17, 12, 0.95);
+  box-shadow: 0 30px 80px rgba(0,0,0,.8);
+}
 
-    .gift {
-      font-size: 70px;
-      margin-bottom: 20px;
-      animation: float 2s ease-in-out infinite;
-    }
+.gift {
+  font-size: 70px;
+  margin-bottom: 20px;
+  animation: float 2s ease-in-out infinite;
+}
 
-    h1 {
-      font-size: clamp(38px, 8vw, 65px);
-      font-weight: normal;
-      margin: 10px 0 20px;
-    }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-    .subtitle {
-      color: #b9ad98;
-      font-family: Arial, sans-serif;
-      letter-spacing: 2px;
-      font-size: 13px;
-    }
+h1 {
+  font-size: clamp(38px, 8vw, 65px);
+  font-weight: normal;
+  margin: 10px 0 20px;
+}
 
-    button {
-      margin-top: 35px;
-      padding: 15px 32px;
-      border: 1px solid #d1ae67;
-      border-radius: 50px;
-      background: transparent;
-      color: #e4c27b;
-      font-size: 14px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.subtitle {
+  color: #b9ad98;
+  font-family: Arial, sans-serif;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
 
-    button:hover {
-      background: #d1ae67;
-      color: #111;
-      transform: scale(1.05);
-    }
+button {
+  margin-top: 35px;
+  padding: 15px 32px;
+  border: 1px solid #d1ae67;
+  border-radius: 50px;
+  background: transparent;
+  color: #e4c27b;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
 
-    #surprise {
-      display: none;
-    }
+button:hover {
+  background: #d1ae67;
+  color: #111;
+}
 
-    .amount {
-      font-size: clamp(45px, 10vw, 85px);
-      color: #e2bd6d;
-      margin: 25px 0;
-    }
+#surprise {
+  display: none;
+}
 
-    .message {
-      font-family: Arial, sans-serif;
-      color: #c5b9a5;
-      font-size: 15
+.amount {
+  font-size: clamp(45px, 10vw, 85px);
+  color: #e2bd6d;
+  margin: 25px 0;
+}
+
+.message {
+  font-family: Arial, sans-serif;
+  color: #c5b9a5;
+  font-size: 15px;
+  line-height: 1.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="gift">🎁</div>
+
+  <h1>Open Your Surprise</h1>
+
+  <div class="subtitle">
+    A LITTLE SOMETHING JUST FOR YOU
+  </div>
+
+  <button onclick="openSurprise()">
+    OPEN
+  </button>
+
+  <div id="surprise">
+
+    <div class="amount">
+      ✨ Surprise! ✨
+    </div>
+
+    <div class="message">
+      You found it! Hope this little surprise made you smile. 💛
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function openSurprise() {
+  document.getElementById("surprise").style.display = "block";
+  document.querySelector("button").style.display = "none";
+}
+</script>
+
+</body>
+</html>
